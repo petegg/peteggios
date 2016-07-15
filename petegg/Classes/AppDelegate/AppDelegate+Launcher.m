@@ -192,7 +192,7 @@
     [dic setValue:[AccountManager sharedAccountManager].loginModel.mid forKey:@"mid"];
     [dic setValue:playStr forKey:@"playcode"];
     
-    NSLog(@"==========%@",playStr);
+     NSLog(@"==========%@",playStr);
     [AFNetWorking postWithApi:str parameters:dic success:^(id json) {
         NSMutableArray * arr =[NSMutableArray array];
             arr = json[@"jsondata"][@"list"];

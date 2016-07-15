@@ -280,7 +280,7 @@
 
 - (void)proveCode
 {
-    
+    [self timeout];
     UITextField * text =  (UITextField *)[self.view viewWithTag:33];
     NSString * str =@"clientAction.do?method=json&classes=appinterface&common=check";
     NSMutableDictionary * dic =[[NSMutableDictionary alloc]init];
@@ -292,7 +292,7 @@
         if ([json[@"jsondata"][@"retCode"] isEqualToString:@"0000"]) {
             registCode =json[@"jsondata"][@"content"];
             totalrecords = json[@"jsondata"][@"totalrecords"];
-             [self timeout];
+            
         }else{
             NSString * str =[NSString stringWithFormat:@"%@",json[@"jsondata"][@"retDesc"]];
             UIButton * btn =  (UIButton *)[self.view viewWithTag:10000];
@@ -301,11 +301,11 @@
            // [self showSuccessHudWithHint:str];
             
         }
-//        if ([json[@"jsondata"][@"retDesc"] isEqualToString:@"此手机号码已注册"]) {
-//          
-//            
-//        }
+        
           } failure:^(NSError *error) {
+              
+              
+              
     }];
     
 }

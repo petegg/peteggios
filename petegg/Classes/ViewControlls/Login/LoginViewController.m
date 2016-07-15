@@ -144,6 +144,7 @@
            // [[AppUtil appTopViewController] showHint:model.retDesc];
             NSMutableArray * listAry = [[NSMutableArray alloc]init];
             [listAry addObjectsFromArray:model.list];
+            
             LoginModel * model1 = listAry[0];
             if ([AppUtil isBlankString:model1.headportrait]
                 || [AppUtil isBlankString:model1.nickname]) {
@@ -154,6 +155,7 @@
         }
             else{
             [[AccountManager sharedAccountManager] login:model.list[0]];
+                
             [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
             }
            [self hideHud];

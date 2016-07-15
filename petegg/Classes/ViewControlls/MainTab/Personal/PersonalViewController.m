@@ -344,11 +344,11 @@
 // 关于sego
 - (void)doRightButtonTouch
 {
-    if (isJiazai == YES) {
+    //if (isJiazai == YES) {
         ThreePointsViewController * threepointVc = [[ThreePointsViewController alloc]init];
         [self.navigationController pushViewController:threepointVc animated:NO];
-    }else{
-    }
+   // }else{
+    //}
    
     
 }
